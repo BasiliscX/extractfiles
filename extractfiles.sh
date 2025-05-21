@@ -68,7 +68,7 @@ Notas:
   - Los archivos ocultos (que comienzan con .) no se procesan.
 
 ¿Ideas? ¿Sugerencias? ¿Querés colaborar?
-Repositorio: https://github.com/usuario/repositorio-ejemplo
+Repositorio: https://github.com/BasiliscX/extractfiles/tree/main-es
 
 EOF
   exit 0
