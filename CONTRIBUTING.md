@@ -21,7 +21,7 @@ We use a GitFlow-inspired model:
 | Branch       | Purpose                                 |
 |--------------|-----------------------------------------|
 | `main`       | Production-ready English version        |
-| `main-es`         | Production-ready Spanish version        |
+| `main-es`    | Production-ready Spanish version        |
 | `develop`    | Active development (base for PRs)       |
 | `feature/*`  | New features                            |
 | `fix/*`      | Bug fixes                               |
