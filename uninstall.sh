@@ -6,26 +6,26 @@ SCRIPT_NAME="extractfiles"
 USER_PATH="$HOME/.local/bin/$SCRIPT_NAME"
 SYSTEM_PATH="/usr/local/bin/$SCRIPT_NAME"
 
-echo "🧹 Uninstaller for $SCRIPT_NAME"
+echo "🧹 Desinstalador de $SCRIPT_NAME"
 
 if [ -f "$USER_PATH" ]; then
-  echo "✅ Installation found at: $USER_PATH"
-  read -rp "Do you want to remove this version? [y/N]: " CONF
-  if [[ "$CONF" =~ ^[Yy]$ ]]; then
+  echo "✅ Instalación encontrada en: $USER_PATH"
+  read -rp "¿Querés eliminar esta versión? [s/N]: " CONF
+  if [[ "$CONF" =~ ^[Ss]$ ]]; then
     rm "$USER_PATH"
-    echo "🗑️  Successfully removed from ~/.local/bin"
+    echo "🗑️  Eliminado correctamente de ~/.local/bin"
   else
-    echo "❌ Cancelled."
+    echo "❌ Cancelado."
   fi
 elif [ -f "$SYSTEM_PATH" ]; then
-  echo "✅ Global installation found at: $SYSTEM_PATH"
-  read -rp "Do you want to remove this version? (requires sudo) [y/N]: " CONF
-  if [[ "$CONF" =~ ^[Yy]$ ]]; then
+  echo "✅ Instalación global encontrada en: $SYSTEM_PATH"
+  read -rp "¿Querés eliminar esta versión? (requiere sudo) [s/N]: " CONF
+  if [[ "$CONF" =~ ^[Ss]$ ]]; then
     sudo rm "$SYSTEM_PATH"
-    echo "🗑️  Successfully removed from /usr/local/bin"
+    echo "🗑️  Eliminado correctamente de /usr/local/bin"
   else
-    echo "❌ Cancelled."
+    echo "❌ Cancelado."
   fi
 else
-  echo "⚠️  No installation of '$SCRIPT_NAME' was found on this system."
+  echo "⚠️  No se encontró ninguna instalación de '$SCRIPT_NAME' en el sistema."
 fi

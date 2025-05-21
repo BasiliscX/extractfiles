@@ -5,35 +5,35 @@ set -e
 SCRIPT_NAME="extractfiles"
 SOURCE_FILE="extractfiles.sh"
 
-echo "🔧 Installing $SCRIPT_NAME"
+echo "🔧 Instalador de $SCRIPT_NAME"
 
 echo ""
-echo "Where do you want to install the '$SCRIPT_NAME' command?"
-echo "  [1] For this user only  (installs to ~/.local/bin)"
-echo "  [2] System-wide (requires sudo, installs to /usr/local/bin)"
-read -rp "Choose an option [1/2]: " OPTION
+echo "¿Dónde querés instalar el comando '$SCRIPT_NAME'?"
+echo "  [1] Solo para este usuario  (instala en ~/.local/bin)"
+echo "  [2] Global (requiere sudo, instala en /usr/local/bin)"
+read -rp "Elegí una opción [1/2]: " OPCION
 
-if [[ "$OPTION" == "1" ]]; then
+if [[ "$OPCION" == "1" ]]; then
   INSTALL_PATH="$HOME/.local/bin/$SCRIPT_NAME"
-  echo "→ Installing to $INSTALL_PATH (user)"
+  echo "→ Instalando en $INSTALL_PATH (usuario)"
   mkdir -p "$HOME/.local/bin"
   cp "$SOURCE_FILE" "$INSTALL_PATH"
   chmod +x "$INSTALL_PATH"
   if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
-    echo "⚠️  Added ~/.local/bin to PATH in your .bashrc. Run 'source ~/.bashrc' or restart your terminal."
+    echo "⚠️  Agregado ~/.local/bin al PATH en tu .bashrc. Ejecutá 'source ~/.bashrc' o reiniciá terminal."
   fi
-  echo "✅ Installed locally as '$SCRIPT_NAME'"
-elif [[ "$OPTION" == "2" ]]; then
+  echo "✅ Instalado localmente como '$SCRIPT_NAME'"
+elif [[ "$OPCION" == "2" ]]; then
   INSTALL_PATH="/usr/local/bin/$SCRIPT_NAME"
-  echo "→ Installing to $INSTALL_PATH (system-wide)"
+  echo "→ Instalando en $INSTALL_PATH (global)"
   sudo cp "$SOURCE_FILE" "$INSTALL_PATH"
   sudo chmod +x "$INSTALL_PATH"
-  echo "✅ Installed globally as '$SCRIPT_NAME'"
+  echo "✅ Instalado globalmente como '$SCRIPT_NAME'"
 else
-  echo "❌ Invalid option. Installation cancelled."
+  echo "❌ Opción inválida. Instalación cancelada."
   exit 1
 fi
 
 echo ""
-echo "📄 Run '$SCRIPT_NAME --help' to get started."
+echo "📄 Ejecutá '$SCRIPT_NAME --help' para comenzar."

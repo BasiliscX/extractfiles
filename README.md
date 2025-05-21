@@ -1,24 +1,24 @@
 # extractfiles
 
-A lightweight CLI utility to recursively scan files in a given directory, filter them by exact string match, and export their paths and contents to a `.txt` file.
+Una herramienta de línea de comandos liviana para escanear recursivamente archivos en un directorio, filtrar por coincidencia exacta de texto y exportar sus rutas y contenidos a un archivo `.txt`.
 
 ---
 
-## 🔧 Features
+## 🔧 Funcionalidades
 
-- ✅ Recursively scans all subdirectories
-- ✅ Extracts paths and contents of plain text files
-- ✅ Supports exact string search (space- and case-sensitive)
-- ✅ Supports multiple search patterns using `|` (space-pipe-space)
-- ✅ Skips binary and hidden files
-- ✅ Outputs to a customizable `.txt` file
-- ✅ Optional colored logs for detailed process tracking
+- ✅ Escaneo recursivo de todos los subdirectorios
+- ✅ Extrae rutas y contenido de archivos de texto plano
+- ✅ Soporta búsqueda exacta (sensible a mayúsculas y espacios)
+- ✅ Permite múltiples patrones de búsqueda usando ` | ` (espacio-pipe-espacio)
+- ✅ Ignora archivos binarios y ocultos
+- ✅ Genera un archivo `.txt` personalizado con los resultados
+- ✅ Opcional: registro detallado en consola con colores
 
 ---
 
-## 🚀 Installation
+## 🚀 Instalación
 
-Clone this repository and run the installer:
+Cloná este repositorio y ejecutá el instalador:
 
 ```bash
 git clone https://github.com/BasiliscX/extractfiles.git
@@ -26,64 +26,64 @@ cd extractfiles
 bash install.sh
 ```
 
-You will be prompted to choose between:
+Se te pedirá elegir entre:
 
-- [1] Local installation (just for your user)
-- [2] System-wide installation (requires `sudo`)
+- [1] Instalación local (solo para tu usuario)
+- [2] Instalación para todo el sistema (requiere `sudo`)
 
 ---
 
-## 🧹 Uninstallation
+## 🧹 Desinstalación
 
-To uninstall the command:
+Para desinstalar el comando:
 
 ```bash
 bash uninstall.sh
 ```
 
-It will detect the installation location and confirm before removing.
+El sistema detectará automáticamente la ubicación de instalación y te pedirá confirmación antes de eliminarlo.
 
-## 💻 Usage
+## 💻 Uso
 
 ```bash
-extractfiles <path> [search_string] [--output name.txt] [--logs]
+extractfiles <ruta> [cadena_busqueda] [--output nombre.txt] [--logs]
 ```
 
-## 📌 Parameters
+## 📌 Parámetros
 
-| Parameter           | Description                                                                           |
-| ------------------- | ------------------------------------------------------------------------------------- |
-| `<path>`            | Absolute path to scan. If it includes backslashes (\\), wrap it in quotes.            |
-| `[search_string]`   | (Optional) Exact string to search. Use <code>\|</code> to separate multiple patterns. |
-| `--output name.txt` | (Optional) Output file name. Defaults to extracted_output.txt.                        |
-| `--logs`            | (Optional) Show detailed log output with colors.                                      |
+| Parámetro             | Descripción                                                                              |
+| --------------------- | ---------------------------------------------------------------------------------------- |
+| `<ruta>`              | Ruta absoluta a escanear. Si incluye barras invertidas (\), ponla entre comillas.        |
+| `[cadena_busqueda]`   | (Opcional) Cadena exacta a buscar. Usa <code>|</code> para separar múltiples patrones.   |
+| `--output nombre.txt` | (Opcional) Nombre del archivo de salida. Por defecto es extracted_output.txt.            |
+| `--logs`              | (Opcional) Muestra logs detallados con colores.                                         |
 
-## 📚 Examples
+## 📚 Ejemplos
 
 ```bash
 extractfiles /mnt/project
-extractfiles "/mnt/project\\src\\module" "DTO"
+extractfiles "/mnt/project\src\module" "DTO"
 extractfiles /mnt/project "error | UpdateService" --logs
 extractfiles /mnt/project "MyDTO" --output filtered_results
 ```
 
-## ⚠️ Notes
+## ⚠️ Notas
 
-- Matching is case-sensitive and space-sensitive
+- La coincidencia distingue entre mayúsculas y minúsculas, y es sensible a espacios
 
-- Binary files are automatically skipped
+- Los archivos binarios se omiten automáticamente
 
-- Hidden files (starting with .) are not processed
+- Los archivos ocultos (que comienzan con .) no se procesan
 
-- If no matches are found, no output file will be created
+- Si no se encuentran coincidencias, no se creará ningún archivo de salida
 
-## 🤝 Contributing
+## 🤝 Contribuciones
 
-Suggestions? Feedback? Want to contribute?
-Feel free to open an issue or pull request!
+¿Sugerencias? ¿Errores? ¿Querés colaborar?
+Podés abrir un issue o hacer un pull request.
 
-[GitHub repository: github.com/BasiliscX/extractfiles](https://github.com/BasiliscX/extractfiles)
+[Repositorio GitHub: github.com/BasiliscX/extractfiles](https://github.com/BasiliscX/extractfiles)
 
-## 📄 License
+## 📄 Licencia
 
-[MIT License](https://opensource.org/licenses/MIT).
+[Licencia MIT](https://opensource.org/licenses/MIT).
