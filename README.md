@@ -82,6 +82,9 @@ extractfiles /mnt/project "MyDTO" --output filtered_results
 ¿Sugerencias? ¿Errores? ¿Querés colaborar?
 Podés abrir un issue o hacer un pull request.
 
+Para conocer las pautas de contribución, consultá la [guía de contribución](https://github.com/BasiliscX/extractfiles/blob/main-es/CONTRIBUTING.md).
+
+
 [Repositorio GitHub: github.com/BasiliscX/extractfiles](https://github.com/BasiliscX/extractfiles)
 
 ## 📄 Licencia
